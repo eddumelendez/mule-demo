@@ -39,7 +39,17 @@
 		<dependency>
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-module-mongo</artifactId>
-			<version>RELEASE</version>
+			<version>3.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.transports</groupId>
+			<artifactId>mule-transport-vm</artifactId>
+			<version>3.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-devkit-support</artifactId>
+			<version>3.4.0</version>
 		</dependency>
 	</dependencies>
 
