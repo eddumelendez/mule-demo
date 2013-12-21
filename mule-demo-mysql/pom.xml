@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.eddumelendez.mule</groupId>
+		<artifactId>mule-demo</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>net.eddumelendez.mule</groupId>
+	<artifactId>mule-demo-mysql</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>mule-demo-mysql</name>
+	<url>http://maven.apache.org</url>
+	
+	<packaging>mule</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mule.tools</groupId>
+				<artifactId>maven-mule-plugin</artifactId>
+				<version>1.9</version>
+				<extensions>true</extensions>
+				<configuration>
+					<inclusions>
+						<inclusion>
+							<groupId>org.mule</groupId>
+							<artifactId>mule-core</artifactId>
+						</inclusion>
+					</inclusions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
