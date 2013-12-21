@@ -34,4 +34,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencies>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-jersey</artifactId>
+			<version>3.4.0</version>
+		</dependency>
+	</dependencies>
 </project>

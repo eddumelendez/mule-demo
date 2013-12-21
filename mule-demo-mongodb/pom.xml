@@ -13,7 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mule-demo-mongodb</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<packaging>mule</packaging>
 
 	<build>
@@ -34,5 +34,13 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.mule.modules</groupId>
+			<artifactId>mule-module-mongo</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+	</dependencies>
 
 </project>
