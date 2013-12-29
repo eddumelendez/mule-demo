@@ -12,7 +12,8 @@
 		<module>mule-demo-mongodb</module>
 		<module>mule-demo-mysql</module>
     <module>mule-demo-embedded</module>
-  </modules>
+    <module>mule-demo-servlet</module>
+	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
