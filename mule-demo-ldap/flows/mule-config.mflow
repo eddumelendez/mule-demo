@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-configuration xmlns="http://www.mulesoft.com/tooling/messageflow" name="mule-config">
+    <global-element name="LDAP" type="http://www.mulesoft.org/schema/mule/ldap/config" entity-id="LDAP#1">
+        <properties>
+            <property name="maxPoolSize"/>
+            <property name="authentication" value="none"/>
+            <property name="authPassword"/>
+            <property name="referral"/>
+            <property name="name" value="LDAP"/>
+            <property name="initialPoolSize"/>
+            <property name="type"/>
+            <property name="authDn"/>
+            <property name="auxiliary;index" value="1"/>
+            <property name="url" value="ldap://127.0.0.1:10389"/>
+            <property name="poolTimeout"/>
+            <property-collection name="@http://www.mulesoft.org/schema/mule/ldap/connection-pooling-profile;0">
+                <property name="exhaustedAction" value="WHEN_EXHAUSTED_GROW"/>
+                <property name="auxiliary;index" value="2"/>
+                <property name="auxiliary;wrapIn" value="2"/>
+                <property name="initialisationPolicy" value="INITIALISE_ONE"/>
+            </property-collection>
+        </properties>
+    </global-element>
+    <flow SubFlow="false" name="mule-configFlow1" type="http://www.mulesoft.org/schema/mule/core/flow" entity-id="1a933594-e8b6-43c6-8064-6105f2105527">
+        <properties>
+            <property name="initialState"/>
+            <property name="processingStrategy2"/>
+            <property name="processingStrategy"/>
+            <property name="bussinessEventsLabel"/>
+            <property name="tracking:enable-default-events"/>
+            <property name="auxiliary;index" value="3"/>
+        </properties>
+        <lane hadOnlyOneElement="false" index="0" isChoiceOtherwiseLane="false" entity-id="compartment-lane#1">
+            <graphicalData x="0" y="0" width="0" height="0"/>
+            <endpoint direction="Inbound" message-exchange-pattern="OneWay" name="VM" type="http://www.mulesoft.org/schema/mule/vm/endpoint" entity-id="VM#1">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name="businessEventsLabel"/>
+                    <property name="disableTransportTransformer"/>
+                    <property name="exchange-pattern" value="request-response"/>
+                    <property name="tracking:enable-default-events"/>
+                    <property name="ref"/>
+                    <property name="transformer-refs"/>
+                    <property name="address"/>
+                    <property name="path" value="ldapVm"/>
+                    <property name="encoding"/>
+                    <property name="responseTransformer-refs"/>
+                    <property name="auxiliary;index" value="4"/>
+                    <property name="responseTimeout"/>
+                    <property name="mimeType"/>
+                    <property name="connector-ref"/>
+                </properties>
+            </endpoint>
+            <pattern name="LDAP" type="http://www.mulesoft.org/schema/mule/ldap/ldap-connector" entity-id="LDAP#2">
+                <graphicalData x="0" y="0" width="0" height="0"/>
+                <properties>
+                    <property name=""/>
+                    <property name="scope" value="SUB_TREE"/>
+                    <property name="baseDn" value="c=Sweden,dc=jayway,dc=se"/>
+                    <property name="authPassword"/>
+                    <property name="org.mule.tooling.ui.modules.core.widgets.meta.ModeAttribute" value="http://www.mulesoft.org/schema/mule/ldap/search"/>
+                    <property name="pageSize"/>
+                    <property name="returnObject"/>
+                    <property name="authDn"/>
+                    <property name="maxResults"/>
+                    <property name="authentication"/>
+                    <property name="config-ref" value="LDAP"/>
+                    <property name="auxiliary;index" value="5"/>
+                    <property name="filter" value="(objectClass=person)"/>
+                    <property name="timeout"/>
+                </properties>
+            </pattern>
+        </lane>
+    </flow>
+</mule-configuration>
